@@ -2,10 +2,37 @@
 <head>
 
      <title>This is templete</title>
+
+    <style>
+        .id_clr{
+            color: red;
+                }
+    </style>
 </head>
 <body>
 
-    <p>hsfksdhlkjkdsjlf</p>
+    <p class="id_clr">{{page_header}}</p>
+
+
+    <table border = "1" cellpadding= "10">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+        {% if student|length > 0 %}
+            {% for i in student%}
+            <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            </tr>
+         {% endfor %}
+
+         {% else %}
+         not id found
+         {% endif %}
+    </table>
+
+
 </body>
 
 
