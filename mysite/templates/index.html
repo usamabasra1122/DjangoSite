@@ -1,15 +1,6 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="{% static 'css/style.css'%}">
-     <title>This is templete</title>
-
-    
-</head>
-<body>
-
+ {% include 'header.html' %}
     <p class="id_clr">{{page_header}}</p>
+
 
 
     <table border = "1" cellpadding= "10">
@@ -30,6 +21,7 @@
          {% endif %}
     </table>
 
+        
 
 </body>
 
