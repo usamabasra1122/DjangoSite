@@ -2,8 +2,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 
-def aboutUs(request):
-    return HttpResponse("<h1>Wellcome the MyPage</h1>")
+def aboutus(request):
+    return render(request, "about_us.html")
 
 def homepage(request):
     data ={

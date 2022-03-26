@@ -1,4 +1,6 @@
- {% include 'header.html' %}
+{% extends 'base.html' %}
+
+ {%block content %}
     <p class="id_clr">{{page_header}}</p>
 
 
@@ -20,11 +22,5 @@
          not id found
          {% endif %}
     </table>
-
+    {% endblock  %}
         
-
-</body>
-
-
-
-</html>
