@@ -1,4 +1,5 @@
 from ast import Return
+import turtle
 from django.http import HttpResponse ,HttpResponseRedirect
 from django.shortcuts import redirect, render
 
@@ -27,12 +28,21 @@ def user_form(request):
             
             name= request.POST["fname"]
             num= request.POST["fnum"]
+            num1= request.POST["num"]
+        
 
             print("user name is " + str(name) + " number is  :" + str(num))
 
             url= "/aboutus/?output={}".format(name)
 
-            return HttpResponseRedirect(url)    
+            if request.POST.get("num") == "":
+               return render(request, "userform.html" , {'error':True})
+               
+            return HttpResponseRedirect(url)  
+
+
+
+
             
     except:
         pass
