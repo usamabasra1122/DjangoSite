@@ -2,6 +2,7 @@ from ast import Return
 import turtle
 from django.http import HttpResponse ,HttpResponseRedirect
 from django.shortcuts import redirect, render
+from services.models import Service
 
 
 def aboutus(request):
@@ -25,6 +26,7 @@ def homepage(request):
 def user_form(request):
 
     try:
+        '''
             
             name= request.POST["fname"]
             num= request.POST["fnum"]
@@ -37,8 +39,22 @@ def user_form(request):
 
             if request.POST.get("num") == "":
                return render(request, "userform.html" , {'error':True})
-               
+
             return HttpResponseRedirect(url)  
+
+
+        '''
+
+        service_data = Service.objects.all()
+
+        data ={
+            "service_data" : service_data
+        }
+
+
+        
+
+
 
 
 
@@ -47,4 +63,4 @@ def user_form(request):
     except:
         pass
 
-    return render(request, "userform.html" )
+    return render(request, "userform.html" , data )
