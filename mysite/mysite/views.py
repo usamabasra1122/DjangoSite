@@ -25,7 +25,7 @@ def homepage(request):
 
 def user_form(request):
 
-    try:
+    
         '''
             
             name= request.POST["fname"]
@@ -47,20 +47,7 @@ def user_form(request):
 
         service_data = Service.objects.all()
 
-        data ={
+        data = {
             "service_data" : service_data
         }
-
-
-        
-
-
-
-
-
-
-            
-    except:
-        pass
-
-    return render(request, "userform.html" , data )
+        return render(request, "userform.html" , data )
