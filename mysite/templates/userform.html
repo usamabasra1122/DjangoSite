@@ -1,10 +1,24 @@
-{% extends "base.html" %}
-{% block content  %}
- 
+
 <div class = "row">
 
     <div class = "col-12">
 
+   
+    {% for u in service_data %}
+
+
+    <div>
+    <h2>  {{u.service_icon}}
+    </h2>    
+    
+    </div>
+    
+    
+    {% endfor %}
+    
+
+   
+    <!--
 
         <form method = "POST">
             {% csrf_token %}
@@ -32,17 +46,9 @@
 
 
     </form>
+    -->
 
-
-    {% for  i in data %}
-    <div>
-
-     <h2> "{{  i.service_icon }}" </h2>
-
-
-    </div>
-
-    {% endfor %}
+    
 
 
 
@@ -55,6 +61,3 @@
 
 
 
-
-
-{% endblock %}
